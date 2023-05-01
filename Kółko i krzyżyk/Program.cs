@@ -18,6 +18,7 @@ namespace Kółko_i_krzyżyk
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            // set buttons default state
             for (int i = 1; i < 10; i++)
             {
                 Button button = buttonList[i];
@@ -28,6 +29,7 @@ namespace Kółko_i_krzyżyk
 
         }
 
+        // check for win
         public static void Check()
         {
 
@@ -55,6 +57,7 @@ namespace Kółko_i_krzyżyk
             WinCheck(buttonList[3], buttonList[5], buttonList[7], turn);
         }
 
+        // check who won
         public static void WinCheck(Button A, Button B, Button C, bool recTurn)
         {
             if (A.Tag == "x" && B.Tag == "x" && C.Tag == "x" && recTurn == true)
@@ -77,6 +80,7 @@ namespace Kółko_i_krzyżyk
             }
         }
 
+        // lock all buttons if someone won
         public static void LockAll()
         {
             for (int i = 1; i < 11; i++)
@@ -85,6 +89,7 @@ namespace Kółko_i_krzyżyk
             }
         }
 
+        // unlock all buttons if new game has begun
         public static void UnLockAll()
         {
             for (int i = 1; i < 11; i++)

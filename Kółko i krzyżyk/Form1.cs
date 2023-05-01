@@ -13,6 +13,7 @@ namespace Kółko_i_krzyżyk
         {
             InitializeComponent();
 
+            // initialize buttons
             Program.buttonList[0] = resetButton;
             Program.buttonList[1] = button1;
             Program.buttonList[2] = button2;
@@ -34,9 +35,12 @@ namespace Kółko_i_krzyżyk
 
         }
 
+        // on board click
         private void button1_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
+
+            // set button image
             if (Program.turn == true)
             {
                 button.Image = Properties.Resources.cross;
@@ -52,6 +56,7 @@ namespace Kółko_i_krzyżyk
 
             
             Program.Check();
+            // true = cross, false = circle
             Program.turn = !Program.turn;
 
             if (Program.turn && !Program.win) button10.Image = Properties.Resources.cross;
@@ -62,6 +67,7 @@ namespace Kółko_i_krzyżyk
             else if (!Program.turn && !Program.win) button10.Image = Properties.Resources.circle;
         }
 
+        // reset current game
         private void resetButton_Click(object sender, EventArgs e)
         {
             for(int i = 1; i < 10; i++)
@@ -84,6 +90,7 @@ namespace Kółko_i_krzyżyk
 
         }
 
+        // reset past scores button
         private void button11_Click(object sender, EventArgs e)
         {
             label1.Text = "X : 0";
