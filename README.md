@@ -1,3 +1,3 @@
 # K-ko-i-krzy-yk
-Learning C# and .NET\n
-11.2020
+Learning C# and .NET
+# 11.2020
